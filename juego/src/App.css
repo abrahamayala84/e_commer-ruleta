@@ -1,4 +1,19 @@
 .App {
+   
   text-align: center;
 }
 
+.container{
+    height: 800px;
+    background-color: violet;
+}
+
+.form {
+    background-color:violet;
+    margin-top: 250px;
+}
+
+#title {
+    color: white;
+  
+}

@@ -3,12 +3,16 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 
-export const Inicio = () => {
- return(
-    <div className="container">
-        <h1 id="title">Ruleta Premios</h1>
-        <div className="form">
-        <Form>
+export const Crear = () => {
+    return(
+        <div className="container">
+            <h1 id="title">Crear Usuario</h1>
+            <div className="form" >
+            <Form>
+            <Form.Group className="mb-3" >
+        <Form.Label>Name</Form.Label>
+        <Form.Control type="text" placeholder="Name" /> 
+      </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control type="email" placeholder="Enter email" /> 
@@ -23,11 +27,7 @@ export const Inicio = () => {
         Submit
       </Button>
     </Form>
-    </div>
-    <br></br>
-    <Link to="/crear"><h3 id="title">crear cuenta</h3></Link>
-    
-    </div>
- )
-
+            </div>
+        </div>
+    )
 }
