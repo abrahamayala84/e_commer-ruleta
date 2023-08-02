@@ -1,3 +1,5 @@
+
+
 .App {
    
   text-align: center;
@@ -17,3 +19,219 @@
     color: white;
   
 }
+
+.container-card {
+  height: 1000px;
+   position: relative;
+   background-color: rgb(174, 116, 224);
+
+}
+
+.card-body {
+    position: absolute;
+   top: 200px;
+   left: 20px;
+   justify-content: center;
+   border-top: 1px solid red;
+   border-bottom: 1px solid red;
+   color: rgb(237, 214, 214);
+   text-decoration:dashed
+}
+
+
+header{
+    color: rgb(255, 255, 255);
+    border: 1px solid red;
+    background-color:rgb(86, 53, 193)
+}
+
+    
+
+li:first-child  .texto{
+    background-color:violet;
+}
+
+li:nth-child(2) .texto{
+    background-color:indigo;
+}
+
+li:nth-child(3) .texto{
+    background-color:blue;
+}
+li:nth-child(4) .texto{
+    background-color:green;
+}
+li:nth-child(5) .texto{
+    background-color:yellow;
+}
+li:nth-child(6) .texto{
+    background-color:orange;
+}
+li:nth-child(7) .texto{
+    background-color:red;
+}
+li:nth-child(8) .texto{
+    background-color:violet;
+}
+li:nth-child(9) .texto{
+    background-color:indigo;
+}
+li:nth-child(10) .texto{
+    background-color:blue;
+}
+li:nth-child(11) .texto{
+    background-color:green;
+}
+li:nth-child(12) .texto{
+    background-color:yellow;
+    
+}
+
+li:first-child {
+   transform: rotate(0deg) skewY(-60deg);
+}
+
+li:nth-child(2) {
+    transform: rotate(30deg) skewY(-60deg);
+} 
+
+li:nth-child(3) {
+    transform: rotate(60deg) skewY(-60deg);
+} 
+
+li:nth-child(4) {
+    transform: rotate(90deg) skewY(-60deg);
+} 
+
+li:nth-child(5) {
+    transform: rotate(120deg) skewY(-60deg);
+} 
+
+li:nth-child(6) {
+    transform: rotate(150deg) skewY(-60deg);
+} 
+
+li:nth-child(7) {
+    transform: rotate(180deg) skewY(-60deg);
+} 
+
+li:nth-child(8) {
+    transform: rotate(210deg) skewY(-60deg);
+} 
+li:nth-child(9) {
+    transform: rotate(240deg) skewY(-60deg);
+} 
+li:nth-child(10) {
+    transform: rotate(270deg) skewY(-60deg);
+} 
+li:nth-child(11) {
+    transform: rotate(300deg) skewY(-60deg);
+} 
+li:nth-child(12) {
+    transform: rotate(330deg) skewY(-60deg);
+} 
+
+.circulo{
+    width:20em;
+    height: 20em;
+    border: 1px solid black;
+    position: relative;
+    padding: 0;
+    margin: 1em auto;
+    border-radius: 50%;
+    list-style: none;
+    overflow: hidden;
+}
+
+li{
+    overflow: hidden;
+    position:absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+    transform-origin: 0% 100%;
+}
+
+.texto{
+    position:absolute;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    text-align: center;
+    display: block;
+    transform: skewY(60deg) rotate(15deg);
+    padding-top: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.arrow {
+width: 0;
+height: 0;
+border-left: 15px solid transparent;
+border-right: 15px solid transparent;
+border-top: 15px solid black;
+position: absolute;
+left: 50%;
+top: -20px;
+
+}
+.RL{
+   align-items: center;
+   justify-content: center;
+   position: absolute;
+   bottom: 0px;
+   left: 45%;
+   height: 30px;
+   width: 60px;
+   border-radius: 50px;
+   background-color: burlywood;
+
+}
+.rodar{
+    width:20em;
+    height: 20em;
+    border: 1px solid black;
+    position: relative;
+    padding: 0;
+    margin: 1em auto;
+    border-radius: 50%;
+    list-style: none;
+    overflow: hidden;
+}
+.detener{
+    
+        width:20em;
+        height: 20em;
+        border: 1px solid black;
+        position: relative;
+        padding: 0;
+        margin: 1em auto;
+        border-radius: 50%;
+        list-style: none;
+        overflow: hidden;
+    
+}
+
+    .rodar { 
+      animation:rodar-spin 1s linear infinite ;
+    }
+
+  
+  
+  @keyframes rodar-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .detener {
+    animation-play-state: stopped; }
+ 
+
+ 

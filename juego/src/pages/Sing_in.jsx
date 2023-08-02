@@ -2,7 +2,7 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
-import { userServices, creaUsuario } from '../services/userServices';
+import {  creaUsuario, userServices } from '../services/userServices';
 
 export const Crear = () => {
  const [name, setName] = useState('')
@@ -14,6 +14,7 @@ export const Crear = () => {
   if (name !== '' && email !== '' && password !== '') {
     creaUsuario(name, email, password)
     alert('registro exitoso')
+    userServices()
   }
  }
     
