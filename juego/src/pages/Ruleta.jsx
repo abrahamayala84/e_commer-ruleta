@@ -1,28 +1,32 @@
 
-import {  useEffect, useState, useContext } from "react"
-import { UserContext } from "../context/userContext"
+import { useEffect, useState,  } from "react"
+import {getPremios, userServices} from "../services/userServices"
+import Table from 'react-bootstrap/Table';
 
 
 export const Ruleta = (() => {
+  
     const [ganador, setGanador] = useState(0)
     const[girar, setgirar] = useState ('detener')
     const [premios, setPremios] = useState(["","","","","","","","","","","",""])
+    
+
+    useEffect(() => {
+   getPremios()
+   
+    },[])
  
-    const {userContex, tokenContext} = useContext(UserContext)
- console.log(userContex, tokenContext)
- useEffect(() => {
-   if(!userContex) {
-     alert('not user')
-     console.log(userContex)
-   }else{
-     alert('user')
+    const savedUsert = () => {
+      localStorage.setItem('premioss', JSON.stringify(premios))
+      return console.log(JSON.parse(localStorage.getItem(premios))) 
    }
- },[userContex])
- 
+    const user = JSON.parse(localStorage.getItem('user'))
+    const premio = JSON.parse(localStorage.getItem('premioss'))
+    console.log(premio)
+
  
    function boton () {
       setgirar('rodar')
-     
       setTimeout(() => { 
          setgirar('detener')
          setGanador( Math.floor(Math.random() *12));
@@ -30,23 +34,19 @@ export const Ruleta = (() => {
    }
 
    function handleValue (e){
-   
       let  _premios = [...premios]
-      
+
     _premios[parseInt(e.target.id)-1]= e.target.value 
-    
      setPremios(_premios)
-     console.log(premios)
+     
    }
-
    console.log(premios[ganador])
-
     return (
 
         <div >
-               <header><h1>WELCOME</h1><h2>{userContex}</h2><h1>{premios[ganador]}</h1></header><br />
+               <header><h1>WELCOME</h1><h2>{user.name}</h2><h1>{premios[ganador]}</h1></header><br />
             <div className="arrow"><h1>{premios[ganador]}</h1></div>
-        <ul  id="ruleta" className={girar}>
+          <ul  id="ruleta" className={girar}>
             <li id={1}>
                <div className="texto" contentEditable= 'true' spellCheck="false" suppressContentEditableWarning={true}>1</div>
             </li>
@@ -106,6 +106,46 @@ export const Ruleta = (() => {
         <img className="imagenes"  />
         <button onClick={boton}  className="RL">girar</button>
         <div ><h1>{premios[ganador]}</h1></div>
+
+        <Table striped bordered hover size="sm">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th> negocio</th>
+          <th>premio y promociones</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>{}</td>
+          <td>{premios[0]}</td>
+        </tr>
+        <tr>
+        <td></td>
+          <td></td>
+          <td>{premios[1]}</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td ></td>
+          <td>{premios[2]}</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td></td>
+          <td>{}</td>
+        </tr>
+      </tbody>
+    </Table>
+
+    <ul>
+      <li>hola
+         {user.nombre}
+      </li>
+      <li>hol</li>
+    </ul>
         </div>
         
         

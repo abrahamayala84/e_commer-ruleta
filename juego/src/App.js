@@ -22,16 +22,9 @@ useEffect(() => {console.log(userContex )},[userContex])
   return (
     <div className="App">
       <Routes>
-        {
-         !user ?
-          <Route path="/" element={<Inicio
-            setToken={setToken}
-            setUser={setUser}
-            />}/> :
-            <Route path="/" element={<Dashboard/>}/>
-        }
-        <Route path="/ruleta" element={<Ruleta/>}/>
+        <Route path="/" element={<Inicio/>}/>
         <Route path="/agregar" element={<Agregar/>}/>
+        <Route path="/ruleta" element={<Ruleta/>}/>
         <Route path="/crear" element={<Crear/>}/>
         <Route path="/dashboard" element={<Dashboard/>}
         />

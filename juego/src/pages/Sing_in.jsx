@@ -13,11 +13,8 @@ export const Crear = () => {
  const submit = (e) => {
   if (name !== '' && email !== '' && password !== '') {
     creaUsuario(name, email, password)
-    alert('registro exitoso')
-    userServices()
-  }
- }
-    
+    alert('registro exitoso') 
+  }} 
     return(
         <div className="container">
             <h1 id="title">Crear Usuario</h1>

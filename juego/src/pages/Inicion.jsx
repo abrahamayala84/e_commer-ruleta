@@ -1,15 +1,17 @@
 
+import { useNavigate } from 'react-router-dom';
 import { useState, useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 import { Login } from '../services/userServices';
-import { UserContext } from '../context/userContext';
+import  { UserContext } from '../context/userContext';
 
-export const Inicio = ({setToken, setUser}) => {
+export const Inicio = () => {
+  const navigate = useNavigate()
   const [email,setEmail] = useState('')
   const [password,setPassword] = useState('')
-  const { setTokenContext, setUserContext} = useContext(UserContext)
+  const { setTokenContext, setUserContext, savedUser,  } = useContext(UserContext)
 
   const submit = async (e) => {
     e.preventDefault()
@@ -17,17 +19,17 @@ export const Inicio = ({setToken, setUser}) => {
 
     if ( email !== '' && password !== '') {
      const data = await Login( email, password)
-     console.log(data)
+  
+     console.log(data.user)
     if(!data){
       alert('error identificacion')
       }else{
       console.log(data.user);
-      setUser(data.user)
-      setToken(data.token)
       alert('success ident')
       setTokenContext(data.token)
-      setUserContext(data.user);
-     
+      setUserContext(data.user)
+       savedUser(data.user)
+     return navigate('/dashboard')
     }}}
 
 
