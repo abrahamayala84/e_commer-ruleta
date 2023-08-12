@@ -10,8 +10,8 @@ export const Agregar = ()=> {
     const [nombre, setNombre] = useState('')
    
     
-   getPremios().then(function (premios) {
-    console.log('hola')
+   getPremios().then(function (data) {
+    console.log('hola',data.premioss[12].nombre)
    })
          
     const saveUser = (user) => {
