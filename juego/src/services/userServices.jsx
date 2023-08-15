@@ -35,15 +35,13 @@ export const Login = async ( email, password) => {
 }catch(error) {
     return console.log(null);
 }
-  
   }
 
-  export const PremiosDB = async ( ) => { 
+  export const PremiosDB = async (_input,principales) => { 
     try{
     const premios = await axios.post('http://localhost:5500/negocio/PremiosDB',
     {
-   premios: {}
-   
+    premios:{_input, principales}
     
     })
     return premios.data;

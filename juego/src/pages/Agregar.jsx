@@ -1,39 +1,43 @@
 
 import { Button } from "react-bootstrap"
-import { useState } from "react"
+import { useState, useNavigate,useEffect } from "react"
 import  Form  from "react-bootstrap/Form"
 import Table from "react-bootstrap/Table"
+import { PremiosDB } from "../services/userServices"
 
 export const Agregar = (() => {
 const [input,setInput] = useState([])
+const [logo,setLogo] = useState('')
 const [nombre,setNombre] = useState('')
 const [genero,setGenero] = useState('')
 const [telefonos,setTelefonos] = useState('')
+const navigate = useNavigate
+const negocio = JSON.parse(localStorage.getItem('negocio'))
+ const premios = JSON.parse(localStorage.getItem('premios'))
+ const user = JSON.parse(localStorage.getItem('user'))
 
- 
 function inputsis(e) {
 e.preventDefault()
-console.log(nombre,genero,telefonos)
-let principales = [nombre,genero,telefonos]
-let inputt = [...input]
-let _input = [...inputt]
+let principales = [logo,nombre,genero,telefonos]
+let _input = [...input]
 _input[e.target.id] = e.target.value
 setInput(_input)
 localStorage.setItem('negocio',JSON.stringify(principales))
-localStorage.setItem('premios',JSON.stringify(_input)) 
-console.log(input)
-console.log(nombre,genero,telefonos,_input)
+localStorage.setItem('premios',JSON.stringify(_input))
+PremiosDB(_input, principales) 
 }
 
- const negocio = JSON.parse(localStorage.getItem('negocio'))
-
 console.log(negocio)
+console.log(premios)
  
   return(
     <div className="container">
       <h1>Registra tu Empresa</h1>
-
-      <Form >
+      <Form > 
+        <Form.Label>
+        <h2>logo</h2>
+        </Form.Label>
+      <input type="file" onChange={e => setLogo(e.target.files[0])}></input><br />
         <Form.Label>
         <h2>Nombre</h2>
         </Form.Label>
@@ -73,41 +77,81 @@ console.log(negocio)
         <br />
         <Button type="submit" onClick={inputsis}>Agregar</Button>
         </Form>
-       <div className="negocios"><h1>{negocio[0]}</h1>
-       <h2>{negocio[1]}</h2>
-       <h3>{negocio[2]}</h3>
+        
+       <div className="negocios"><h1></h1>
+       <h2>{negocio[0]}</h2>
        </div>
        <div>
        <Table striped bordered hover>
       <thead>
         <tr>
+          <th>
+            <h3>{negocio[0]}</h3>
+            </th>
+        <th>
+          <h3>{negocio[2]}</h3>
+          </th>
+          <th>
+          <h3>logo</h3>
+          </th>
+          <th>
+          <h3></h3>
+          </th>
+          </tr>
+        
+        <tr>
           <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
+          <th>premios</th>
+          <th>Premios</th>
+          <th>Editar</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>1</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
+          <td>1 y 2</td>
+          <td>{premios[0]}</td>
+          <td>{premios[1]}</td>
+          <td><Button>Editar</Button></td>
+          <td><Button>borrar</Button></td>
         </tr>
         <tr>
-          <td>2</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
+          <td>3 Y 4</td>
+          <td>{premios[2]}</td>
+          <td>{premios[3]}</td>
+          <td><Button>Editar</Button></td>
+          <td><Button>borrar</Button></td>
         </tr>
         <tr>
-          <td>3</td>
-          <td colSpan={2}>Larry the Bird</td>
-          <td>@twitter</td>
+        <td>5 y 6</td>
+          <td>{premios[4]}</td>
+          <td>{premios[5]}</td>
+          <td><Button>Editar</Button></td>
+          <td><Button>borrar</Button></td>
         </tr>
-      </tbody>
+        <tr>
+        <td>7 y 8</td>
+          <td>{premios[6]}</td>
+          <td>{premios[7]}</td>
+          <td><Button>Editar</Button></td>
+          <td><Button>borrar</Button></td>
+        </tr>
+        <tr>
+        <td>9 y 10</td>
+          <td>{premios[8]}</td>
+          <td>{premios[9]}</td>
+          <td><Button>Editar</Button></td>
+          <td><Button>borrar</Button></td>
+        </tr>
+        <tr>
+        <td>11 y 12</td>
+          <td>{premios[10]}</td>
+          <td>{premios[11]}</td>
+          <td><Button>Editar</Button></td>
+          <td><Button>borrar</Button></td>
+        </tr>
+        </tbody>
     </Table>
-
        </div>
        
 
