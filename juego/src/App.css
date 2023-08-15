@@ -6,7 +6,8 @@
 }
 
 .container{
-    height: 800px;
+   
+    height: 100dvh;
     background-color: violet;
 }
 

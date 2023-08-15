@@ -53,7 +53,7 @@ export const Login = async ( email, password) => {
   
   }
 
-  export const getPremios = async (req, res) => {
+  export const getPremios = async () => {
     const getdata = await axios.get('http://localhost:5500/negocio')
     console.log(getdata.data);
   return getdata.data
