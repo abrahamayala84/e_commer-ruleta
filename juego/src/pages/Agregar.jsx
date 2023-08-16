@@ -1,6 +1,5 @@
-
 import { Button } from "react-bootstrap"
-import { useState, useNavigate,useEffect } from "react"
+import { useState, useNavigate } from "react"
 import  Form  from "react-bootstrap/Form"
 import Table from "react-bootstrap/Table"
 import { PremiosDB } from "../services/userServices"
@@ -16,9 +15,11 @@ const negocio = JSON.parse(localStorage.getItem('negocio'))
  const premios = JSON.parse(localStorage.getItem('premios'))
  const user = JSON.parse(localStorage.getItem('user'))
 
+ if(!user) { return navigate('/')}
+
 function inputsis(e) {
 e.preventDefault()
-let principales = [logo,nombre,genero,telefonos]
+let principales = [nombre,genero,telefonos]
 let _input = [...input]
 _input[e.target.id] = e.target.value
 setInput(_input)
@@ -29,7 +30,7 @@ PremiosDB(_input, principales)
 
 console.log(negocio)
 console.log(premios)
- 
+
   return(
     <div className="container">
       <h1>Registra tu Empresa</h1>
@@ -37,7 +38,7 @@ console.log(premios)
         <Form.Label>
         <h2>logo</h2>
         </Form.Label>
-      <input type="file" onChange={e => setLogo(e.target.files[0])}></input><br />
+      <input type="file" onChange={inputsis}></input><br />
         <Form.Label>
         <h2>Nombre</h2>
         </Form.Label>
@@ -77,8 +78,8 @@ console.log(premios)
         <br />
         <Button type="submit" onClick={inputsis}>Agregar</Button>
         </Form>
-        
-       <div className="negocios"><h1></h1>
+
+       <div className="negocios">
        <h2>{negocio[0]}</h2>
        </div>
        <div>
@@ -95,10 +96,10 @@ console.log(premios)
           <h3>logo</h3>
           </th>
           <th>
-          <h3></h3>
+          
           </th>
           </tr>
-        
+
         <tr>
           <th>#</th>
           <th>premios</th>
@@ -153,7 +154,7 @@ console.log(premios)
         </tbody>
     </Table>
        </div>
-       
+
 
     </div>
   )
