@@ -5,10 +5,17 @@
   text-align: center;
 }
 
+body, form{
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(211,46,171,1) 43%, rgba(0,212,255,1) 100%);
+
+}
 .container{
-   
+    color: white;
     height: 100dvh;
-    background-color: violet;
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(211,46,171,1) 43%, rgba(0,212,255,1) 100%);
+
 }
 
 .form {
@@ -21,32 +28,25 @@
   
 }
 
-.container-card {
-  height: 1000px;
-   position: relative;
-   background-color: rgb(174, 116, 224);
-
-}
-
-.card-body {
-    position: absolute;
-   top: 200px;
-   left: 20px;
-   justify-content: center;
-   border-top: 1px solid red;
-   border-bottom: 1px solid red;
-   color: rgb(237, 214, 214);
-   text-decoration:dashed
-}
-
 
 header{
     color: rgb(255, 255, 255);
-    border: 1px solid red;
-    background-color:rgb(86, 53, 193)
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(211,46,171,1) 43%, rgba(0,212,255,1) 100%);
+
 }
 
-    
+.card{
+    opacity: 0.5;
+}
+
+   footer{
+    color:white
+   } 
+
+   .modal {
+   opacity: 0.5;
+   }
 
 li:first-child  .texto{
     background-color:violet;

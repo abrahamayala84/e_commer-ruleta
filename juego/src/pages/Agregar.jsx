@@ -3,10 +3,11 @@ import { useState, useNavigate } from "react"
 import  Form  from "react-bootstrap/Form"
 import Table from "react-bootstrap/Table"
 import { PremiosDB } from "../services/userServices"
+import Modal from 'react-bootstrap/Modal';
+
 
 export const Agregar = (() => {
 const [input,setInput] = useState([])
-const [logo,setLogo] = useState('')
 const [nombre,setNombre] = useState('')
 const [genero,setGenero] = useState('')
 const [telefonos,setTelefonos] = useState('')
@@ -17,15 +18,19 @@ const negocio = JSON.parse(localStorage.getItem('negocio'))
 
  if(!user) { return navigate('/')}
 
+
+
 function inputsis(e) {
 e.preventDefault()
 let principales = [nombre,genero,telefonos]
+console.log(principales)
 let _input = [...input]
 _input[e.target.id] = e.target.value
 setInput(_input)
 localStorage.setItem('negocio',JSON.stringify(principales))
 localStorage.setItem('premios',JSON.stringify(_input))
 PremiosDB(_input, principales) 
+console.log(principales)
 }
 
 console.log(negocio)
@@ -38,7 +43,7 @@ console.log(premios)
         <Form.Label>
         <h2>logo</h2>
         </Form.Label>
-      <input type="file" onChange={inputsis}></input><br />
+      <input  type="file" accept="image/*" ></input><br />
         <Form.Label>
         <h2>Nombre</h2>
         </Form.Label>
@@ -76,85 +81,70 @@ console.log(premios)
         <Form.Label ><h4>Posicion 12</h4></Form.Label>
         <input id='11' onChange={inputsis} name="inpust" type="text"></input>
         <br />
-        <Button type="submit" onClick={inputsis}>Agregar</Button>
-        </Form>
+        <Button variant="outline-light" style={{}} type="submit" onClick={inputsis}>Agregar</Button>
+    
+      </Form>
+      
+       <div
+      className="modal show"
+      style={{ display: 'block', position: 'initial' }}
+    >
+      <Modal.Dialog>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal title</Modal.Title>
+        </Modal.Header>
 
-       <div className="negocios">
-       <h2>{negocio[0]}</h2>
-       </div>
-       <div>
-       <Table striped bordered hover>
+        <Modal.Body>
+        <Table striped bordered hover>
       <thead>
         <tr>
           <th>
-            <h3>{negocio[0]}</h3>
+            <h3></h3>
             </th>
         <th>
-          <h3>{negocio[2]}</h3>
-          </th>
-          <th>
-          <h3>logo</h3>
-          </th>
-          <th>
-          
+          <h3></h3>
           </th>
           </tr>
-
         <tr>
-          <th>#</th>
           <th>premios</th>
-          <th>Premios</th>
-          <th>Editar</th>
-          <th></th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>1 y 2</td>
-          <td>{premios[0]}</td>
-          <td>{premios[1]}</td>
-          <td><Button>Editar</Button></td>
-          <td><Button>borrar</Button></td>
+          <td></td>
+          <td></td>
+         
         </tr>
         <tr>
-          <td>3 Y 4</td>
-          <td>{premios[2]}</td>
-          <td>{premios[3]}</td>
-          <td><Button>Editar</Button></td>
-          <td><Button>borrar</Button></td>
+          <td></td>
+          <td></td> 
         </tr>
         <tr>
-        <td>5 y 6</td>
-          <td>{premios[4]}</td>
-          <td>{premios[5]}</td>
-          <td><Button>Editar</Button></td>
-          <td><Button>borrar</Button></td>
+          <td></td>
+          <td></td>
         </tr>
         <tr>
-        <td>7 y 8</td>
-          <td>{premios[6]}</td>
-          <td>{premios[7]}</td>
-          <td><Button>Editar</Button></td>
-          <td><Button>borrar</Button></td>
+          <td></td>
+          <td></td>
         </tr>
         <tr>
-        <td>9 y 10</td>
-          <td>{premios[8]}</td>
-          <td>{premios[9]}</td>
-          <td><Button>Editar</Button></td>
-          <td><Button>borrar</Button></td>
+          <td></td>
+          <td></td>
         </tr>
         <tr>
-        <td>11 y 12</td>
-          <td>{premios[10]}</td>
-          <td>{premios[11]}</td>
-          <td><Button>Editar</Button></td>
-          <td><Button>borrar</Button></td>
+          <td></td>
+          <td></td>
         </tr>
         </tbody>
     </Table>
-       </div>
+        </Modal.Body>
 
+        <Modal.Footer>
+          <Button variant="secondary">Close</Button>
+          <Button variant="outline-secondary"  type="submit" onClick={inputsis}>Confirmar</Button>
+        </Modal.Footer>
+      </Modal.Dialog>
+    </div>
 
     </div>
   )

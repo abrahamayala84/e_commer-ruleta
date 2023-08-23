@@ -16,8 +16,6 @@ function App() {
   const [token, setToken] = useState('')
   const {tokenContext, setTokenContext,userContex, setUserContext} = useContext(UserContext)
  
-useEffect(() => {console.log(user,token )},[user, token])
-useEffect(() => {console.log(userContex )},[userContex])
 
   return (
     <div className="App">

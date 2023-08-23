@@ -34,7 +34,7 @@ export const Inicio = () => {
 
 
  return(
-    <div className="container">
+    <div className='container' >
         <header ><h1>RULETA</h1></header>
         <div className="form">
         <Form>
@@ -54,8 +54,11 @@ export const Inicio = () => {
     </Form>
     </div>
     <br></br>
-    <Link to="/crear"><h3 id="title">crear cuenta</h3></Link>
-    
+    <Link to="/crear"><h3 id="title">crear cuenta</h3></Link><br />
+    <footer>
+      <h2>Encuentranos</h2>
+      
+    </footer>
     </div>
  )
 
