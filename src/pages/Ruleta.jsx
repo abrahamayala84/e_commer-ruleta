@@ -10,15 +10,7 @@ export const Ruleta = (() => {
     const[girar, setgirar] = useState ('detener')
     const [premios, setPremios] = useState(["","","","","","","","","","","",""])
     
-
-    const savedUsert = () => {
-      localStorage.setItem('premioss', JSON.stringify(premios))
-      return console.log(JSON.parse(localStorage.getItem(premios))) 
-   }
     const user = JSON.parse(localStorage.getItem('user'))
-    const premio = JSON.parse(localStorage.getItem('premioss'))
-    
-
 
     useEffect(() => {
    getPremios().then((premios) => {console.log(premios)
