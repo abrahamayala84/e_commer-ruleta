@@ -15,16 +15,13 @@ export const Inicio = () => {
 
   const submit = async (e) => {
     e.preventDefault()
-    console.log('submit')
 
     if ( email !== '' && password !== '') {
      const data = await Login( email, password)
   
-     console.log(data.user)
     if(!data){
       alert('error identificacion')
       }else{
-      console.log(data.user);
       alert('success ident')
       setTokenContext(data.token)
       setUserContext(data.user)

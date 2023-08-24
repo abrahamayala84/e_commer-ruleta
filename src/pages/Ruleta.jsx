@@ -19,8 +19,6 @@ export const Ruleta = (() => {
    
    
     },[])
- console.log(premios)
- console.log(ganador)
  
 
  
@@ -40,7 +38,6 @@ export const Ruleta = (() => {
     
      
    }
-   console.log()
     return (
         <div >
           <header>

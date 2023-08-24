@@ -5,7 +5,7 @@ export const userServices = async (name, email, password) =>{
     const login = await axios.get('http://localhost:5500/userRuleta')
     
 
-return console.log(login.data)
+return console.log(login.data)  // WTF? return a console.log ???
 
 }
 
@@ -33,7 +33,7 @@ export const Login = async ( email, password) => {
     })
     return logins.data;
 }catch(error) {
-    return console.log(null);
+    return console.log(null);  // WTF? return a console.log ???
 }
   }
 
@@ -46,14 +46,13 @@ export const Login = async ( email, password) => {
     })
     return premios.data;
 }catch(error) {
-    return console.log(null);
+    return console.log(null);  // WTF? return a console.log ???
 }
   
   }
 
   export const getPremios = async () => {
     const getdata = await axios.get('http://localhost:5500/negocio')
-    console.log(getdata.data);
   return getdata.data
   
 }

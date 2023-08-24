@@ -23,20 +23,15 @@ const negocio = JSON.parse(localStorage.getItem('negocio'))
 function inputsis(e) {
 e.preventDefault()
 let principales = [nombre,genero,telefonos]
-console.log(principales)
 let _input = [...input]
 _input[e.target.id] = e.target.value
 setInput(_input)
 localStorage.setItem('negocio',JSON.stringify(principales))
 localStorage.setItem('premios',JSON.stringify(_input))
 PremiosDB(_input, principales) 
-console.log(principales,_input)
 }
 
-console.log(negocio)
-console.log(premios)
 let negocios = negocio[0]
-console.log(negocios)
 
   return(
     <div className="container">

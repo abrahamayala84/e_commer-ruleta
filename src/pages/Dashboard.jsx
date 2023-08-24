@@ -9,7 +9,6 @@ import { getPremios} from '../services/userServices'
 
 export const Dashboard =  () => {
   const user = JSON.parse(localStorage.getItem('user'))
-  console.log(user)
 
   const [Userdata, setdata] = useState([])
   const [UserNegocio, setNegocio] = useState([])
@@ -19,11 +18,9 @@ export const Dashboard =  () => {
   useEffect(() => {
   getPremios()
   .then((premios) => {
-  console.log(premios)
   setdata(premios.premioss[0].premios[0])
   setNegocio(premios.premioss[0].premios[0].principales[0])
   setUsertel(premios.premioss[0].premios[0].principales[2])
-  console.log(premios)
   
 })
   },[])
@@ -36,8 +33,6 @@ export const Dashboard =  () => {
     <a href="ruleta" class="btn btn-primary">Jugar</a>
   </div>
 </div>`
-console.log(UserNegocio)
-console.log(Userdata)
 
 
    
