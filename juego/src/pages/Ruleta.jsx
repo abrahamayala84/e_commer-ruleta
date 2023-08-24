@@ -17,21 +17,23 @@ export const Ruleta = (() => {
    }
     const user = JSON.parse(localStorage.getItem('user'))
     const premio = JSON.parse(localStorage.getItem('premioss'))
-    console.log(premio)
+    
 
 
     useEffect(() => {
    getPremios().then((premios) => {console.log(premios)
-   setPremios(premios.premioss[0].premios[0])})
+   setPremios(premios.premioss[0].premios[0]._input)})
   
    
    
     },[])
  console.log(premios)
+ console.log(ganador)
  
 
  
    function boton () {
+      
       setgirar('rodar')
       setTimeout(() => { 
          setgirar('detener')
@@ -43,15 +45,22 @@ export const Ruleta = (() => {
       let  _premios = [...premios]
 
     _premios[parseInt(e.target.id)-1]= e.target.value 
-     setPremios(_premios)
+    
      
    }
-   console.log(premios[ganador])
+   console.log()
     return (
-
         <div >
-               <header><h1>WELCOME</h1><h2>{user.name}</h2><h1>{premios[ganador]}</h1></header><br />
-            <div className="arrow"><h1>{premios[ganador]}</h1></div>
+          <header>
+             <h1>Bienvenido y mucha surte!!</h1>
+             <h2>{user.name}</h2>
+             <h1>Premio</h1>
+             <h2>numero en ruleta</h2>
+             <h2>{ganador}</h2>
+             <h2>{premios[ganador]}</h2>
+          </header>
+          <br />
+            
           <ul  id="ruleta" className={girar}>
             <li id={1}>
                <div className="texto" contentEditable= 'true' spellCheck="false" suppressContentEditableWarning={true}>1</div>
@@ -60,7 +69,7 @@ export const Ruleta = (() => {
                <div className="texto" contentEditable= 'true' spellCheck="false" suppressContentEditableWarning={true}>2</div>
             </li>
             <li id={3}>
-               <div className="texto" contentEditable= 'true' spellCheck="false" suppressContentEditableWarning={true}>3</div>
+               <div className="texto" contentEditable= 'true' spellCheck="false" suppressContentEditableWarning={true}>{premios[2]}</div>
             </li>
             <li id={4}>
                <div className="texto" contentEditable= 'true' spellCheck="false" suppressContentEditableWarning={true}>4</div>
@@ -90,30 +99,14 @@ export const Ruleta = (() => {
                <div className="texto" contentEditable= 'true' spellCheck="false" suppressContentEditableWarning={true}>12</div>
             </li>
         </ul>
-        <div className="tabla">
-        <table>
-         <tbody>
-<tr><td><input id="1" onChange={handleValue} value={`${premios[0]}`} type="text" /></td></tr>
-<tr><td><input id="2" onChange={handleValue} value={premios[1]} type="text" /></td></tr>
-<tr><td><input id="3" onChange={handleValue} value={premios[2]} type="text" /></td></tr>
-<tr><td><input id="4" onChange={handleValue} value={premios[3]} type="text" /></td></tr>
-<tr><td><input id="5" onChange={handleValue} value={premios[4]} type="text" /></td></tr>
-<tr><td><input id="6" onChange={handleValue} value={premios[5]} type="text" /></td></tr>
-<tr><td><input id="7" onChange={handleValue} value={premios[6]} type="text" /></td></tr>
-<tr><td><input id="8" onChange={handleValue} value={premios[7]} type="text" /></td></tr>
-<tr><td><input id="9" onChange={handleValue} value={premios[8]} type="text" /></td></tr>
-<tr><td><input id="10" onChange={handleValue} value={premios[9]} type="text" /></td></tr>
-<tr><td><input id="11" onChange={handleValue} value={premios[10]} type="text" /></td></tr>
-<tr><td><input id="12" onChange={handleValue} value={premios[11]} type="text" /></td></tr>
 
-</tbody>
-</table>
-        </div>
-        <img className="imagenes"  />
         <button onClick={boton}  className="RL">girar</button>
-        <div ><h1>{premios[ganador]}</h1></div>
+        <div >
+         <h1>Felicidades ganaste :</h1>
+         <h2>{premios[ganador]}</h2>
+         </div>
 
-        <Table striped bordered hover size="sm">
+        <Table  striped bordered hover size="sm">
       <thead>
         <tr>
           <th>#</th>
@@ -124,24 +117,34 @@ export const Ruleta = (() => {
       </thead>
       <tbody>
         <tr>
-          <td>1</td>
-          <td>{}</td>
+          <td>1 y 2</td>
           <td>{premios[0]}</td>
-        </tr>
-        <tr>
-        <td></td>
-          <td></td>
           <td>{premios[1]}</td>
         </tr>
         <tr>
-          <td></td>
-          <td ></td>
+        <td>3 y 4</td>
           <td>{premios[2]}</td>
+          <td>{premios[3]}</td>
         </tr>
         <tr>
-          <td>4</td>
-          <td></td>
-          <td>{}</td>
+         <td>5 y 6</td>
+          <td>{premios[4]}</td>
+          <td >{premios[5]}</td>
+        </tr>
+        <tr>
+          <td>7 y 8</td>
+          <td>{premios[6]}</td>
+          <td>{premios[7]}</td>
+        </tr>
+        <tr>
+          <td>9 y 10</td>
+          <td>{premios[8]}</td>
+          <td>{premios[9]}</td>
+        </tr>
+        <tr>
+          <td>11 y 12</td>
+          <td>{premios[10]}</td>
+          <td>{premios[11]}</td>
         </tr>
       </tbody>
     </Table>

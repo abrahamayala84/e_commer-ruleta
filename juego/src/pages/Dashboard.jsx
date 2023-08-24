@@ -11,32 +11,36 @@ export const Dashboard =  () => {
   const user = JSON.parse(localStorage.getItem('user'))
   console.log(user)
   const [Userdata, setdata] = useState([])
+  const [UserNegocio, setNegocio] = useState([])
+  const [Usertel, setUsertel] = useState('')
 
   useEffect(() => {
  getPremios()
   .then((premios) => {
   console.log(premios)
   setdata(premios.premioss[0].premios[0])
+  setNegocio(premios.premioss[0].premios[0].principales[0])
+  setUsertel(premios.premioss[0].premios[0].principales[2])
   console.log(premios)
 
 })
  
   },[])
-
+console.log(UserNegocio)
 console.log(Userdata)
    
         return (
         < >  
         <header>
           <h3>Bienvenido al juego de la ruleta</h3>
-          <p>Puedes agregar tu negocio o solo ljugar por premios</p>
+          <p>Puedes agregar tu negocio o solo jugar por premios</p>
           <Button variant="outline-warning" href="agregar">Agregar negocio</Button>
           </header><br />
          <Card border="warning" style={{ width: '18rem' }}>
-        <Card.Header>{}</Card.Header>
+        <Card.Header>{UserNegocio}</Card.Header>
         <Card.Body>
           <Card.Title>{}</Card.Title>
-          <Card.Subtitle>Telefono:{}</Card.Subtitle>
+          <Card.Subtitle>Telefono:{Usertel}</Card.Subtitle>
           <br />
           <Card.Subtitle><h3>Premios</h3></Card.Subtitle>
           <Card.Text>{Userdata._input}</Card.Text>

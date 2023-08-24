@@ -30,7 +30,7 @@ setInput(_input)
 localStorage.setItem('negocio',JSON.stringify(principales))
 localStorage.setItem('premios',JSON.stringify(_input))
 PremiosDB(_input, principales) 
-console.log(principales)
+console.log(principales,_input)
 }
 
 console.log(negocio)
