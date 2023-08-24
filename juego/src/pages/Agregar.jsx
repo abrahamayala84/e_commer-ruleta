@@ -35,6 +35,8 @@ console.log(principales,_input)
 
 console.log(negocio)
 console.log(premios)
+let negocios = negocio[0]
+console.log(negocios)
 
   return(
     <div className="container">
@@ -99,7 +101,7 @@ console.log(premios)
       <thead>
         <tr>
           <th>
-            <h3></h3>
+            <h3>{negocios}</h3>
             </th>
         <th>
           <h3></h3>
