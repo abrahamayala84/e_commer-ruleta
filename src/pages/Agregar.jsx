@@ -212,9 +212,7 @@ export const Agregar = () => {
                                     <th>
                                         <h3>{negocios}</h3>
                                     </th>
-                                    <th>
-                                        <h3></h3>
-                                    </th>
+                                    <th></th>
                                 </tr>
                                 <tr>
                                     <th>premios</th>

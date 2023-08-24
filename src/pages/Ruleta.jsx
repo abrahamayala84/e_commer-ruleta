@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getPremios, userServices } from '../services/userServices';
+import { getPremios } from '../services/userServices';
 import Table from 'react-bootstrap/Table';
 
 export const Ruleta = () => {

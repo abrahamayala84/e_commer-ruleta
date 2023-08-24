@@ -5,8 +5,6 @@ import { useEffect, useState } from 'react';
 import { getPremios } from '../services/userServices';
 
 export const Dashboard = () => {
-    const user = JSON.parse(localStorage.getItem('user'));
-
     const [Userdata, setdata] = useState([]);
     const [UserNegocio, setNegocio] = useState([]);
     const [Usertel, setUsertel] = useState('');
