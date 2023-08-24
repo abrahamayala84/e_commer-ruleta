@@ -1,62 +1,77 @@
-
 import { useNavigate } from 'react-router-dom';
-import { useState, useContext} from 'react';
+import { useState, useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 import { Login } from '../services/userServices';
-import  { UserContext } from '../context/userContext';
+import { UserContext } from '../context/userContext';
 
 export const Inicio = () => {
-  const navigate = useNavigate()
-  const [email,setEmail] = useState('')
-  const [password,setPassword] = useState('')
-  const { setTokenContext, setUserContext, savedUser,  } = useContext(UserContext)
+    const navigate = useNavigate();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const { setTokenContext, setUserContext, savedUser } =
+        useContext(UserContext);
 
-  const submit = async (e) => {
-    e.preventDefault()
+    const submit = async (e) => {
+        e.preventDefault();
 
-    if ( email !== '' && password !== '') {
-     const data = await Login( email, password)
-  
-    if(!data){
-      alert('error identificacion')
-      }else{
-      alert('success ident')
-      setTokenContext(data.token)
-      setUserContext(data.user)
-       savedUser(data.user)
-     return navigate('/dashboard')
-    }}}
+        if (email !== '' && password !== '') {
+            const data = await Login(email, password);
 
+            if (!data) {
+                alert('error identificacion');
+            } else {
+                alert('success ident');
+                setTokenContext(data.token);
+                setUserContext(data.user);
+                savedUser(data.user);
+                return navigate('/dashboard');
+            }
+        }
+    };
 
- return(
-    <div className='container' >
-        <header ><h1>RULETA</h1></header>
-        <div className="form">
-        <Form>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter email" /> 
-      </Form.Group>
+    return (
+        <div className="container">
+            <header>
+                <h1>RULETA</h1>
+            </header>
+            <div className="form">
+                <Form>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Email address</Form.Label>
+                        <Form.Control
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            type="email"
+                            placeholder="Enter email"
+                        />
+                    </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" autoComplete="on" />
-      </Form.Group>
-    
-      <Button onClick={submit} variant="primary" type="submit">
-        Submit
-      </Button>
-    </Form>
-    </div>
-    <br></br>
-    <Link to="/crear"><h3 id="title">crear cuenta</h3></Link><br />
-    <footer>
-      <h2>Encuentranos</h2>
-      
-    </footer>
-    </div>
- )
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            type="password"
+                            placeholder="Password"
+                            autoComplete="on"
+                        />
+                    </Form.Group>
 
-}
+                    <Button onClick={submit} variant="primary" type="submit">
+                        Submit
+                    </Button>
+                </Form>
+            </div>
+            <br></br>
+            <Link to="/crear">
+                <h3 id="title">crear cuenta</h3>
+            </Link>
+            <br />
+            <footer>
+                <h2>Encuentranos</h2>
+            </footer>
+        </div>
+    );
+};
