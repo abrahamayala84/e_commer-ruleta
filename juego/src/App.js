@@ -6,7 +6,7 @@ import { Agregar } from './pages/Agregar';
 import { Route, Routes,  } from 'react-router-dom';
 import './App.css';
 import { Dashboard } from './pages/Dashboard';
-import { useEffect, useState, useContext } from 'react';
+import {  useState, useContext } from 'react';
 import { UserContext } from './context/userContext';
 
 

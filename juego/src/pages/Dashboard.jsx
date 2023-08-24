@@ -4,33 +4,46 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
 import { useEffect, useState } from 'react'
-import { getPremios } from '../services/userServices'
+import { getPremios} from '../services/userServices'
 
 
 export const Dashboard =  () => {
   const user = JSON.parse(localStorage.getItem('user'))
   console.log(user)
+
   const [Userdata, setdata] = useState([])
   const [UserNegocio, setNegocio] = useState([])
   const [Usertel, setUsertel] = useState('')
+  
 
   useEffect(() => {
- getPremios()
+  getPremios()
   .then((premios) => {
   console.log(premios)
   setdata(premios.premioss[0].premios[0])
   setNegocio(premios.premioss[0].premios[0].principales[0])
   setUsertel(premios.premioss[0].premios[0].principales[2])
   console.log(premios)
-
+  
 })
- 
   },[])
+
+  let imprimir =  `<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">${UserNegocio}</h5>
+    <p class="card-text">${Userdata._input}</p>
+    <a href="ruleta" class="btn btn-primary">Jugar</a>
+  </div>
+</div>`
 console.log(UserNegocio)
 console.log(Userdata)
+
+
    
         return (
         < >  
+        <div dangerouslySetInnerHTML={{__html: imprimir}}></div>
         <header>
           <h3>Bienvenido al juego de la ruleta</h3>
           <p>Puedes agregar tu negocio o solo jugar por premios</p>
@@ -50,7 +63,7 @@ console.log(Userdata)
       </Card>
       <br />
       <Card border="info" style={{ width: '18rem' }}>
-        <Card.Header>Header</Card.Header>
+        <Card.Header>{}</Card.Header>
         <Card.Body>
           <Card.Title>Info Card Title</Card.Title>
           <Card.Text>

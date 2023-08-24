@@ -2,18 +2,21 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
-import {  creaUsuario, userServices } from '../services/userServices';
+import {  creaUsuario } from '../services/userServices';
+import { useNavigate } from 'react-router-dom';
 
 export const Crear = () => {
  const [name, setName] = useState('')
  const [email, setEmail] = useState('')
  const [password, setPassword] = useState('')
-
+const navigate = useNavigate()
 
  const submit = (e) => {
+  e.preventDefault()
   if (name !== '' && email !== '' && password !== '') {
     creaUsuario(name, email, password)
     alert('registro exitoso') 
+    navigate('/')
   }} 
     return(
         <div className="container">
