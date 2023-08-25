@@ -37,14 +37,17 @@ export const Login = async ( email, password) => {
 }
   }
 
-  export const PremiosDB = async (_input,principales) => { 
+  export const PremiosDB = async (_input,nombre,telefonos,genero) => { 
     try{
-    const premios = await axios.post('http://localhost:5500/negocio/PremiosDB',
+    const premioss = await axios.post('http://localhost:5500/negocio/PremiosDB',
     {
-    premios:{_input, principales}
+    premios:[_input],
+    nombre: nombre,
+    telefonos: telefonos,
+    genero:genero
     
     })
-    return premios.data;
+    return premioss.data;
 }catch(error) {
     return console.log(null);
 }

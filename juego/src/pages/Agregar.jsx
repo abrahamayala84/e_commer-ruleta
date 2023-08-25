@@ -1,7 +1,7 @@
 import { Button } from "react-bootstrap"
 import { useState, useNavigate } from "react"
 import  Form  from "react-bootstrap/Form"
-import Table from "react-bootstrap/Table"
+
 import { PremiosDB } from "../services/userServices"
 import Modal from 'react-bootstrap/Modal';
 
@@ -13,23 +13,27 @@ const [genero,setGenero] = useState('')
 const [telefonos,setTelefonos] = useState('')
 const navigate = useNavigate
 const negocio = JSON.parse(localStorage.getItem('negocio'))
- const premios = JSON.parse(localStorage.getItem('premios'))
- const user = JSON.parse(localStorage.getItem('user'))
+const premios = JSON.parse(localStorage.getItem('premios'))
+const user = JSON.parse(localStorage.getItem('user'))
+ 
+const [show, setShow] = useState(false);
+
+const handleClose = () => setShow(false);
+const handleShow = () => setShow(true);
 
  if(!user) { return navigate('/')}
 
-
-
 function inputsis(e) {
 e.preventDefault()
+handleShow()
 let principales = [nombre,genero,telefonos]
 console.log(principales)
 let _input = [...input]
 _input[e.target.id] = e.target.value
 setInput(_input)
-localStorage.setItem('negocio',JSON.stringify(principales))
+localStorage.setItem('negocio',JSON.stringify({nombre,genero,telefonos}))
 localStorage.setItem('premios',JSON.stringify(_input))
-PremiosDB(_input, principales) 
+PremiosDB(_input, nombre,genero,telefonos) 
 console.log(principales,_input)
 }
 
@@ -41,6 +45,7 @@ console.log(negocios)
   return(
     <div className="container">
       <h1>Registra tu Empresa</h1>
+      <h2>{user.name}</h2>
       <Form > 
         <Form.Label>
         <h2>logo</h2>
@@ -83,71 +88,26 @@ console.log(negocios)
         <Form.Label ><h4>Posicion 12</h4></Form.Label>
         <input id='11' onChange={inputsis} name="inpust" type="text"></input>
         <br />
-        <Button variant="outline-light" style={{}} type="submit" onClick={inputsis}>Agregar</Button>
+        <Button variant="outline-light" style={{}} type="submit" onClick={inputsis} >Agregar</Button>
     
       </Form>
       
-       <div
-      className="modal show"
-      style={{ display: 'block', position: 'initial' }}
-    >
-      <Modal.Dialog>
+    <>
+     
+      <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
+          <Modal.Title>{negocios}</Modal.Title>
         </Modal.Header>
-
-        <Modal.Body>
-        <Table striped bordered hover>
-      <thead>
-        <tr>
-          <th>
-            <h3>{negocios}</h3>
-            </th>
-        <th>
-          <h3></h3>
-          </th>
-          </tr>
-        <tr>
-          <th>premios</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-         
-        </tr>
-        <tr>
-          <td></td>
-          <td></td> 
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-        </tr>
-        </tbody>
-    </Table>
-        </Modal.Body>
-
+        <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary">Close</Button>
-          <Button variant="outline-secondary"  type="submit" onClick={inputsis}>Confirmar</Button>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="outline-light" style={{}} type="submit" onClick={inputsis} >Agregar</Button>
+          
         </Modal.Footer>
-      </Modal.Dialog>
-    </div>
-
+      </Modal>
+    </>
     </div>
   )
 
