@@ -1,138 +1,148 @@
-
-
 .App {
-   
-  text-align: center;
+    text-align: center;
 }
 
-body, form{
-    background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(211,46,171,1) 43%, rgba(0,212,255,1) 100%);
-
+body,
+form {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(211, 46, 171, 1) 43%,
+        rgba(0, 212, 255, 1) 100%
+    );
 }
-.container{
+.container {
     color: white;
     height: 100dvh;
-    background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(211,46,171,1) 43%, rgba(0,212,255,1) 100%);
-
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(211, 46, 171, 1) 43%,
+        rgba(0, 212, 255, 1) 100%
+    );
 }
 
 .form {
-    background-color:violet;
+    background-color: violet;
     margin-top: 250px;
 }
 
 #title {
     color: white;
-  
 }
 
-header{
-    color: rgb(255, 255, 255);
-    background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(211,46,171,1) 43%, rgba(0,212,255,1) 100%);
-
+header {
+    justify-content: center;
+    margin-top: 10px;
+    color: white;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(211, 46, 171, 1) 43%,
+        rgba(0, 212, 255, 1) 100%
+    );
 }
 
-.card{
+.card {
     opacity: 0.5;
 }
 
-   footer{
-    color:white
-   } 
-
-   .modal {
-   opacity: 0.5;
-   }
-
-li:first-child  .texto{
-    background-color:violet;
+footer {
+    color: white;
 }
 
-li:nth-child(2) .texto{
-    background-color:indigo;
+.modal {
+    opacity: 0.5;
 }
 
-li:nth-child(3) .texto{
-    background-color:blue;
+li:first-child .texto {
+    background-color: violet;
 }
-li:nth-child(4) .texto{
-    background-color:green;
+
+li:nth-child(2) .texto {
+    background-color: indigo;
 }
-li:nth-child(5) .texto{
-    background-color:yellow;
+
+li:nth-child(3) .texto {
+    background-color: blue;
 }
-li:nth-child(6) .texto{
-    background-color:orange;
+li:nth-child(4) .texto {
+    background-color: green;
 }
-li:nth-child(7) .texto{
-    background-color:red;
+li:nth-child(5) .texto {
+    background-color: yellow;
 }
-li:nth-child(8) .texto{
-    background-color:violet;
+li:nth-child(6) .texto {
+    background-color: orange;
 }
-li:nth-child(9) .texto{
-    background-color:indigo;
+li:nth-child(7) .texto {
+    background-color: red;
 }
-li:nth-child(10) .texto{
-    background-color:blue;
+li:nth-child(8) .texto {
+    background-color: violet;
 }
-li:nth-child(11) .texto{
-    background-color:green;
+li:nth-child(9) .texto {
+    background-color: indigo;
 }
-li:nth-child(12) .texto{
-    background-color:yellow;
-    
+li:nth-child(10) .texto {
+    background-color: blue;
+}
+li:nth-child(11) .texto {
+    background-color: green;
+}
+li:nth-child(12) .texto {
+    background-color: yellow;
 }
 
 li:first-child {
-   transform: rotate(0deg) skewY(-60deg);
+    transform: rotate(0deg) skewY(-60deg);
 }
 
 li:nth-child(2) {
     transform: rotate(30deg) skewY(-60deg);
-} 
+}
 
 li:nth-child(3) {
     transform: rotate(60deg) skewY(-60deg);
-} 
+}
 
 li:nth-child(4) {
     transform: rotate(90deg) skewY(-60deg);
-} 
+}
 
 li:nth-child(5) {
     transform: rotate(120deg) skewY(-60deg);
-} 
+}
 
 li:nth-child(6) {
     transform: rotate(150deg) skewY(-60deg);
-} 
+}
 
 li:nth-child(7) {
     transform: rotate(180deg) skewY(-60deg);
-} 
+}
 
 li:nth-child(8) {
     transform: rotate(210deg) skewY(-60deg);
-} 
+}
 li:nth-child(9) {
     transform: rotate(240deg) skewY(-60deg);
-} 
+}
 li:nth-child(10) {
     transform: rotate(270deg) skewY(-60deg);
-} 
+}
 li:nth-child(11) {
     transform: rotate(300deg) skewY(-60deg);
-} 
+}
 li:nth-child(12) {
     transform: rotate(330deg) skewY(-60deg);
-} 
+}
 
-.circulo{
-    width:20em;
+.circulo {
+    width: 20em;
     height: 20em;
     border: 1px solid black;
     position: relative;
@@ -143,9 +153,9 @@ li:nth-child(12) {
     overflow: hidden;
 }
 
-li{
+li {
     overflow: hidden;
-    position:absolute;
+    position: absolute;
     top: 0;
     right: 0;
     width: 50%;
@@ -153,8 +163,8 @@ li{
     transform-origin: 0% 100%;
 }
 
-.texto{
-    position:absolute;
+.texto {
+    position: absolute;
     left: -100%;
     width: 200%;
     height: 200%;
@@ -168,30 +178,28 @@ li{
 }
 
 .arrow {
-width: 0;
-height: 0;
-border-left: 15px solid transparent;
-border-right: 15px solid transparent;
-border-top: 15px solid black;
-position: absolute;
-left: 50%;
-top: -20px;
-
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid black;
+    position: absolute;
+    left: 50%;
+    top: -20px;
 }
-.RL{
-   align-items: center;
-   justify-content: center;
-   position: absolute;
-   bottom: 0px;
-   left: 45%;
-   height: 30px;
-   width: 60px;
-   border-radius: 50px;
-   background-color: burlywood;
-
+.RL {
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0px;
+    left: 45%;
+    height: 30px;
+    width: 60px;
+    border-radius: 50px;
+    background-color: burlywood;
 }
-.rodar{
-    width:20em;
+.rodar {
+    width: 20em;
     height: 20em;
     border: 1px solid black;
     position: relative;
@@ -201,37 +209,50 @@ top: -20px;
     list-style: none;
     overflow: hidden;
 }
-.detener{
-    
-        width:20em;
-        height: 20em;
-        border: 1px solid black;
-        position: relative;
-        padding: 0;
-        margin: 1em auto;
-        border-radius: 50%;
-        list-style: none;
-        overflow: hidden;
-    
+.detener {
+    width: 20em;
+    height: 20em;
+    border: 1px solid black;
+    position: relative;
+    padding: 0;
+    margin: 1em auto;
+    border-radius: 50%;
+    list-style: none;
+    overflow: hidden;
 }
 
-    .rodar { 
-      animation:rodar-spin 1s linear infinite ;
-    }
+.rodar {
+    animation: rodar-spin 1s linear infinite;
+}
 
-  
-  
-  @keyframes rodar-spin {
+@keyframes rodar-spin {
     from {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     to {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
+}
 
-  .detener {
-    animation-play-state: stopped; }
- 
+.detener {
+    animation-play-state: stopped;
+}
 
- 
+@media screen and (max-width: 500px) {
+    .hola-dos {
+        background-color: lightgreen;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .hola-dos {
+        background-color: rgb(238, 144, 210);
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+}
