@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
 import { Login } from "../services/userServices";
 import { UserContext } from "../context/userContext";
-import { GoogleLogin, useGoogleLogin } from "@react-oauth/google";
+import { GoogleLogin } from "@react-oauth/google";
 
 export const Inicio = () => {
     const navigate = useNavigate();
@@ -40,7 +40,18 @@ export const Inicio = () => {
             <header>
                 <h1>RULETA</h1>
             </header>
-            <div id="singInDiv"></div>
+            <div style={{ marginTop: "30px" }}>
+                <GoogleLogin
+                    onSuccess={(credentialResponse) => {
+                        console.log(credentialResponse);
+                        return navigate("/dashboard");
+                    }}
+                    onError={() => {
+                        console.log("Login Failed");
+                    }}
+                />
+            </div>
+
             <div className="form">
                 <Form>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
