@@ -1,5 +1,6 @@
 import { Button } from "react-bootstrap";
-import { useState, useNavigate } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 
 import { PremiosDB } from "../services/userServices";
@@ -10,7 +11,7 @@ export const Agregar = () => {
     const [nombre, setNombre] = useState("");
     const [genero, setGenero] = useState("");
     const [telefonos, setTelefonos] = useState("");
-    const navigate = useNavigate;
+    const navigate = useNavigate();
     const negocio = JSON.parse(localStorage.getItem("negocio"));
     const premios = JSON.parse(localStorage.getItem("premios"));
     const user = JSON.parse(localStorage.getItem("user"));
