@@ -8,11 +8,11 @@ import { UserContext } from "../context/userContext";
 import { GoogleLogin } from "@react-oauth/google";
 
 export const Inicio = () => {
-    const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const { setTokenContext, setUserContext, savedUser } =
         useContext(UserContext);
+    const navigate = useNavigate();
 
     const submit = async (e) => {
         e.preventDefault();
@@ -30,7 +30,7 @@ export const Inicio = () => {
                 setTokenContext(data.token);
                 setUserContext(data.user);
                 savedUser(data.user);
-                return navigate("/dashboard");
+                return navigate("/dasboard");
             }
         }
     };

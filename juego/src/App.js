@@ -5,7 +5,7 @@ import { Agregar } from "./pages/Agregar";
 import { Usuario } from "./pages/Usuario";
 import { Dashboard } from "./pages/Dashboard";
 
-import { Route, Routes, Switch } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 
 import { useState, useContext } from "react";
