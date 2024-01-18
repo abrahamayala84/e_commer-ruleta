@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ListGroup } from "react-bootstrap";
-import Table from "react-bootstrap/Table";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export const Ruleta = (props) => {
@@ -12,7 +12,7 @@ export const Ruleta = (props) => {
     const [premios, setPremios] = useState([]);
     const [valuel, setValuel] = useState([]);
     const [colors, setColors] = useState([]);
-    let neys = [];
+    const navigate = useNavigate();
 
     const savedUsert = () => {
         localStorage.setItem("premioss", JSON.stringify(premios));
@@ -107,6 +107,7 @@ export const Ruleta = (props) => {
             <button onClick={todo} className="RL">
                 girar
             </button>
+
             <div>
                 <h1>Felicidades ganaste :</h1>
                 <h2>{valuel[ganador - 1]}</h2>
