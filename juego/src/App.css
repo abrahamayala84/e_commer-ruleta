@@ -1399,3 +1399,315 @@ input[type="date"] {
         justify-content: center;
     }
 }
+
+/* ============================================
+   PERFIL - 4 SECCIONES
+   ============================================ */
+.perfil-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Pestañas */
+.perfil-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 60px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 40px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 1rem;
+}
+
+.tab-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, #f15bb5, #9b5de5);
+}
+
+/* Tarjetas de sección */
+.seccion-perfil {
+    animation: fadeIn 0.3s ease;
+}
+
+.card-perfil {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-perfil h2 {
+    color: #f15bb5;
+    margin-bottom: 20px;
+    border-left: 3px solid #f15bb5;
+    padding-left: 15px;
+}
+
+/* Datos usuario */
+.info-usuario {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    font-size: 0.8rem;
+    color: #aaa;
+    margin-bottom: 5px;
+}
+
+.campo p {
+    font-size: 1rem;
+    color: white;
+}
+
+.tiros-disponibles {
+    color: #4ade80;
+    font-weight: bold;
+}
+
+/* Premios canjeados con QR */
+.premios-canjeados-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+.premio-canjeado-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    padding: 15px;
+}
+
+.premio-info h4 {
+    color: #f15bb5;
+    margin-bottom: 5px;
+}
+
+.premio-info .codigo {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: #aaa;
+    margin-top: 5px;
+}
+
+/* Paquetes de tiros */
+.paquetes-tiros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.paquete {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.paquete:hover {
+    transform: translateY(-5px);
+    border-color: #9b5de5;
+}
+
+.paquete h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.paquete .precio {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4ade80;
+    margin: 10px 0;
+}
+
+.paquete .ahorro {
+    font-size: 0.8rem;
+    color: #f15bb5;
+}
+
+.paquete button {
+    background: linear-gradient(135deg, #f15bb5, #9b5de5);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 40px;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Negocios del usuario */
+.negocio-card {
+    margin-bottom: 20px;
+}
+
+.negocio-header {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.negocio-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.negocio-info h3 {
+    color: #f15bb5;
+    margin-bottom: 5px;
+}
+
+.premios-lista-mini {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.premio-mini {
+    background: rgba(155, 93, 229, 0.3);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+}
+
+.negocio-acciones {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Botones */
+.btn-editar,
+.btn-ver,
+.btn-crear,
+.btn-guardar,
+.btn-cancelar {
+    padding: 8px 16px;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-editar {
+    background: #9b5de5;
+    color: white;
+}
+
+.btn-ver {
+    background: #00b4d8;
+    color: white;
+}
+
+.btn-crear {
+    background: linear-gradient(135deg, #f15bb5, #9b5de5);
+    color: white;
+    margin-top: 10px;
+}
+
+.btn-guardar {
+    background: #4ade80;
+    color: #1e1e2f;
+}
+
+.btn-cancelar {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.btn-refrescar {
+    background: linear-gradient(135deg, #00b4d8, #0077b6);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 40px;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+.info-refresh {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+}
+
+.info-refresh ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.form-editar-negocio {
+    padding: 15px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.loading-text {
+    text-align: center;
+    margin-top: 15px;
+    color: #f15bb5;
+}
+
+/* Botón eliminar negocio */
+.btn-eliminar-negocio {
+    background: rgba(241, 91, 181, 0.8);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 40px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-eliminar-negocio:hover {
+    background: #f15bb5;
+    transform: scale(1.02);
+}
+
+/* Lista en modal de confirmación */
+.modal-confirm ul {
+    color: #ccc;
+    font-size: 0.85rem;
+}
+
+.modal-confirm ul li {
+    margin: 5px 0;
+}
